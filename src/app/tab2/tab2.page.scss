@@ -1,0 +1,22 @@
+ion-content {
+    --ion-background-color: #eee6dd;
+  }
+  
+  ion-fab-button, ion-button {
+    --background: #3bc9ad;
+    --background-activated: #30dfa2;
+    --background-hover: #11b77d;
+    --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --color: black;
+  }
+
+  .image-container {
+    border: 2px solid #ccc; 
+    padding: 10px; 
+    margin-top: 10px; 
+  }
+
+  ion-title {
+    text-align: center;
+  }
+

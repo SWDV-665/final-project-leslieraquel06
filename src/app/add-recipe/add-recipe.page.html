@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Add Recipe
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Recipe Name</ion-label>
+      <ion-input [(ngModel)]="recipe.name" placeholder="Enter recipe name"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row justify-content-center align-items-center style="height: 100%;">
+        <ion-col size="auto">
+          <ion-button (click)="takePicture()">Upload Image</ion-button>
+          <div *ngIf="selectedImage" class="image-container">
+            <ion-img [src]="selectedImage" alt="Selected Image" style="height: 200px;"></ion-img>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-item>
+      <ion-label position="stacked">Ingredients</ion-label>
+      <ion-input [(ngModel)]="recipe.ingredients" placeholder="Enter ingredients, separated by commas"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="saveRecipe()">Save</ion-button>
+  </ion-list>
+</ion-content>

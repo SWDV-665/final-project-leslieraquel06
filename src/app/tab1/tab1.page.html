@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Recipes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item-sliding *ngFor="let recipe of recipes">
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-img [src]="recipe.photo" alt="Recipe Image"></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ recipe.name }}</h2>
+        </ion-label>
+        <ion-button (click)="viewRecipeDetails(recipe.id)">View Details</ion-button>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="success" (click)="loveRecipe(recipe)">
+          <ion-icon name="heart-outline"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="deleteRecipe(recipe)">
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-button expand="full" (click)="addRecipe()">Add Recipe</ion-button>
+</ion-content>
